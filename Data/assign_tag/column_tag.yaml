@@ -1,0 +1,19 @@
+DWH: #service
+  SetDB: #database
+    dbo: #schemas
+      C2WAccount: #table
+        - name: Account_No_Equity #column
+          tags: #business glossary term
+            - 'access.tag1'
+          terms: #classification tag
+            - 'yamlGlossary.yamlTermB' 
+        - name: Account_No_Derivatives
+          terms: 
+            - 'yamlGlossary.yamlTermA'
+      C2WSocialAccount:
+        - name: Account_No_Equity
+          terms: 
+            - 'yamlGlossary.yamlTermA'
+        - name: Account_No_Derivatives
+          terms: 
+            - 'yamlGlossary.yamlTermB'

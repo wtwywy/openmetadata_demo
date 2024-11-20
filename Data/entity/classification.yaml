@@ -1,0 +1,44 @@
+- name: warehouseTable
+  displayName: DW Table type
+  description: ""
+  mutuallyExclusive: True
+  tags:
+    - name: dim
+      displayName: Dimention Table
+      description: ""
+    - name: Fact
+      displayName: Fact Table
+      description: ""
+
+- name: databaseTable
+  displayName: DB Table type
+  description: ""
+  mutuallyExclusive: True
+  tags:
+    - name: setup
+      displayName: Setup Table
+      description: ""
+    - name: master
+      displayName: Master Table
+      description: ""
+    - name: transaction
+      displayName: Transaction Table
+      description: ""
+
+- name: fancy
+  displayName: Fancy Tag
+  description: ""
+  mutuallyExclusive: False
+  tags:
+    - name: people
+    - name: stock
+    - name: history
+
+- name: access
+  displayName: Access Control
+  description: ""
+  mutuallyExclusive: False
+  tags:
+    - name: tag1
+    - name: tag2
+    - name: tag3

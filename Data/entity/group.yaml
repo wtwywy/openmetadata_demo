@@ -1,0 +1,44 @@
+businessUnits:
+  - name: SET
+    displayName: SET
+    desciption: "this is SET"
+    departments:
+      - name: IT
+        displayName: Information Technology
+        description: "bla"
+        groups:
+          - name: dataAnalytic
+            displayName: Data Analytic
+            description: "We do data"
+      - name: HR
+        displayName: Human Resource
+        description: "HR"
+      - name: BI
+        displayName: business intelligent
+  - name: "TFEX"
+    displayName: "TFEX"
+    desciption: "this is TFEX"
+  - name: "TNVDR"
+    displayName: "Thai NVDR"
+    desciption: ""
+  - name: "TCH"
+    displayName: "TCH"
+    desciption: "this is TCH"
+  - name: "TSD"
+    displayName: "TSD"
+    desciption: "this is TSD"
+  - name: "FinNet"
+    displayName: "Finnet inovation"
+    desciption: "this is FinNet"
+  - name: "LiVE"
+    displayName: "Thai livefin"
+    desciption: ""
+  - name: "SETTRADE"
+    displayName: "SETTRADE"
+    desciption: "this is settrade"
+  - name: "DAP"
+    displayName: "Digital access platform"
+    desciption: "this is dap"
+  - name: "TDX"
+    displayName: "TDX"
+    desciption: "this is tdx"

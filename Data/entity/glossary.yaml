@@ -1,0 +1,10 @@
+- name: yamlGlossary
+  displayName: yaml glossary
+  description: glossary collection from yaml file
+  terms:
+    - name: yamlTermA
+      displayName: 'term a'
+      description: value of x * b / sum(a)
+    - name: yamlTermB
+      displayName: 'term b'
+      description: avg of k

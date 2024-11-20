@@ -1,0 +1,32 @@
+#metadata.schema.entity.data.chart.ChartType
+PowerBI:
+  - name: testPowerBIService
+    displayName: Power BI Service
+    description: test
+    dashboards:
+      - name: xyzReport
+        displayName: Report of xyz
+        description: ''
+        charts:
+          - name: xPortion
+            displayName: Chart of x
+            description: ''
+            chartType: Pie
+          - name: lineOfY
+            displayName: Chart of Y
+            description: ''
+            chartType: Line
+Tableau:
+  - name: testTableauService
+    displayName: Tableau Service
+    description: test
+    dashboards:
+      - name: tabDashboard
+        displayName: Dashboard of aaa
+        description: ''
+        charts:
+          - name: piepiepie
+            displayName: Pie Pie
+            description: ''
+            chartType: Pie
+

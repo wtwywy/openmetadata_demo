@@ -1,0 +1,54 @@
+#metadta.generated.schema.entity.data.table.DataType
+FileStorage:
+  - file_name: order_equity_csv
+    display_name: ORDER_EQUITY.CSV
+    description: file from ...
+    columns:
+      - name: ORDER_NO
+        data_type: NUMBER
+      - name: ACCOUNT_NO
+        data_type: VARCHAR
+      - name: STOCK
+        data_type: VARCHAR
+      - name: SIDE
+        data_type: CHAR
+      - name: VOLUME
+        data_type: NUMBER
+      - name: MATCH_VOLUME
+        data_type: NUMBER
+      - name: PRICE
+        data_type: NUMBER
+      - name: VALIDITY
+        data_type: VARCHAR
+      - name: ORDER_DATE
+        data_type: DATETIME
+        description: "2020-08-25 10:07:41"
+      - name: STATUS
+        data_type: VARCHAR
+  - file_name: order_deriv_csv
+    display_name: ORDER_DERIV.CSV
+    description: file from ...
+    columns:
+      - name: ORDER_NO
+        data_type: NUMBER
+      - name: ACCOUNT_NO
+        data_type: VARCHAR
+      - name: STOCK
+        data_type: VARCHAR
+      - name: SIDE
+        data_type: CHAR
+      - name: POS
+        data_type: CHAR
+      - name: VOLUME
+        data_type: NUMBER
+      - name: MATCH_VOLUME
+        data_type: NUMBER
+      - name: PRICE
+        data_type: NUMBER
+      - name: VALIDITY
+        data_type: VARCHAR
+      - name: ORDER_DATE
+        data_type: DATETIME
+        description: "2020-08-25 10:07:41"
+      - name: STATUS
+        data_type: VARCHAR

@@ -1,0 +1,1361 @@
+{
+    "data": [
+        {
+            "id": "ee485689-0894-4e4b-9296-f73758c85bec",
+            "name": "C2WAccount",
+            "fullyQualifiedName": "DWH.SetDB.dbo.C2WAccount",
+            "version": 0.2,
+            "updatedAt": 1731556139508,
+            "updatedBy": "profiler-bot",
+            "href": "http://localhost:8585/api/v1/tables/ee485689-0894-4e4b-9296-f73758c85bec",
+            "tableType": "Regular",
+            "columns": [
+                {
+                    "name": "Account_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WAccount.Account_Id",
+                    "constraint": "PRIMARY_KEY"
+                },
+                {
+                    "name": "Member_Id",
+                    "dataType": "VARCHAR",
+                    "dataLength": 20,
+                    "dataTypeDisplay": "varchar(20)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WAccount.Member_Id",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "League_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WAccount.League_Id",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Account_No_Equity",
+                    "dataType": "VARCHAR",
+                    "dataLength": 25,
+                    "dataTypeDisplay": "varchar(25)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WAccount.Account_No_Equity",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Account_No_Derivatives",
+                    "dataType": "VARCHAR",
+                    "dataLength": 25,
+                    "dataTypeDisplay": "varchar(25)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WAccount.Account_No_Derivatives",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Activate_Date",
+                    "dataType": "DATE",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "date",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WAccount.Activate_Date",
+                    "constraint": "NULL"
+                }
+            ],
+            "databaseSchema": {
+                "id": "49869263-edf5-4ae2-b855-69b962ce8012",
+                "type": "databaseSchema",
+                "name": "dbo",
+                "fullyQualifiedName": "DWH.SetDB.dbo",
+                "displayName": "dbo",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databaseSchemas/49869263-edf5-4ae2-b855-69b962ce8012"
+            },
+            "database": {
+                "id": "5cad45b2-96fb-47d7-adc3-dcde14efb55b",
+                "type": "database",
+                "name": "SetDB",
+                "fullyQualifiedName": "DWH.SetDB",
+                "displayName": "SetDB",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databases/5cad45b2-96fb-47d7-adc3-dcde14efb55b"
+            },
+            "service": {
+                "id": "3d2b9575-db1e-4753-a189-8ad79318c89a",
+                "type": "databaseService",
+                "name": "DWH",
+                "fullyQualifiedName": "DWH",
+                "displayName": "DWH",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/services/databaseServices/3d2b9575-db1e-4753-a189-8ad79318c89a"
+            },
+            "serviceType": "Mssql",
+            "changeDescription": {
+                "fieldsAdded": [
+                    {
+                        "name": "columns.Member_Id.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Account_No_Derivatives.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.Sensitive\",\"name\":\"Sensitive\",\"description\":\"PII which if lost, compromised, or disclosed without authorization, could result in substantial harm, embarrassment, inconvenience, or unfairness to an individual.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Activate_Date.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    }
+                ],
+                "fieldsUpdated": [],
+                "fieldsDeleted": [],
+                "previousVersion": 0.1
+            },
+            "deleted": false,
+            "sourceHash": "87ddcf1371b1e497517a7016c54db37e"
+        },
+        {
+            "id": "93ce7944-3066-4768-b537-e03a572ba69a",
+            "name": "C2WGroup",
+            "fullyQualifiedName": "DWH.SetDB.dbo.C2WGroup",
+            "version": 0.1,
+            "updatedAt": 1731553476348,
+            "updatedBy": "ingestion-bot",
+            "href": "http://localhost:8585/api/v1/tables/93ce7944-3066-4768-b537-e03a572ba69a",
+            "tableType": "Regular",
+            "columns": [
+                {
+                    "name": "Group_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WGroup.Group_Id",
+                    "constraint": "PRIMARY_KEY"
+                },
+                {
+                    "name": "League_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WGroup.League_Id",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Group_Detail",
+                    "dataType": "VARCHAR",
+                    "dataLength": 25,
+                    "dataTypeDisplay": "varchar(25)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WGroup.Group_Detail",
+                    "constraint": "NULL"
+                }
+            ],
+            "databaseSchema": {
+                "id": "49869263-edf5-4ae2-b855-69b962ce8012",
+                "type": "databaseSchema",
+                "name": "dbo",
+                "fullyQualifiedName": "DWH.SetDB.dbo",
+                "displayName": "dbo",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databaseSchemas/49869263-edf5-4ae2-b855-69b962ce8012"
+            },
+            "database": {
+                "id": "5cad45b2-96fb-47d7-adc3-dcde14efb55b",
+                "type": "database",
+                "name": "SetDB",
+                "fullyQualifiedName": "DWH.SetDB",
+                "displayName": "SetDB",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databases/5cad45b2-96fb-47d7-adc3-dcde14efb55b"
+            },
+            "service": {
+                "id": "3d2b9575-db1e-4753-a189-8ad79318c89a",
+                "type": "databaseService",
+                "name": "DWH",
+                "fullyQualifiedName": "DWH",
+                "displayName": "DWH",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/services/databaseServices/3d2b9575-db1e-4753-a189-8ad79318c89a"
+            },
+            "serviceType": "Mssql",
+            "deleted": false,
+            "sourceHash": "155eb44a00f8afc1a98eb5fd82bb2393"
+        },
+        {
+            "id": "22b61d93-4588-4e0f-b13c-ce87f99de76d",
+            "name": "C2WInvalidData",
+            "fullyQualifiedName": "DWH.SetDB.dbo.C2WInvalidData",
+            "version": 0.2,
+            "updatedAt": 1731556141518,
+            "updatedBy": "profiler-bot",
+            "href": "http://localhost:8585/api/v1/tables/22b61d93-4588-4e0f-b13c-ce87f99de76d",
+            "tableType": "Regular",
+            "columns": [
+                {
+                    "name": "Type",
+                    "dataType": "VARCHAR",
+                    "dataLength": 30,
+                    "dataTypeDisplay": "varchar(30)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WInvalidData.Type",
+                    "constraint": "NOT_NULL"
+                },
+                {
+                    "name": "Date",
+                    "dataType": "DATE",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "date",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WInvalidData.Date",
+                    "constraint": "NOT_NULL"
+                },
+                {
+                    "name": "Value",
+                    "dataType": "VARCHAR",
+                    "dataLength": 100,
+                    "dataTypeDisplay": "varchar(100)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WInvalidData.Value",
+                    "constraint": "NULL"
+                }
+            ],
+            "databaseSchema": {
+                "id": "49869263-edf5-4ae2-b855-69b962ce8012",
+                "type": "databaseSchema",
+                "name": "dbo",
+                "fullyQualifiedName": "DWH.SetDB.dbo",
+                "displayName": "dbo",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databaseSchemas/49869263-edf5-4ae2-b855-69b962ce8012"
+            },
+            "database": {
+                "id": "5cad45b2-96fb-47d7-adc3-dcde14efb55b",
+                "type": "database",
+                "name": "SetDB",
+                "fullyQualifiedName": "DWH.SetDB",
+                "displayName": "SetDB",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databases/5cad45b2-96fb-47d7-adc3-dcde14efb55b"
+            },
+            "service": {
+                "id": "3d2b9575-db1e-4753-a189-8ad79318c89a",
+                "type": "databaseService",
+                "name": "DWH",
+                "fullyQualifiedName": "DWH",
+                "displayName": "DWH",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/services/databaseServices/3d2b9575-db1e-4753-a189-8ad79318c89a"
+            },
+            "serviceType": "Mssql",
+            "changeDescription": {
+                "fieldsAdded": [
+                    {
+                        "name": "columns.Date.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Value.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.Sensitive\",\"name\":\"Sensitive\",\"description\":\"PII which if lost, compromised, or disclosed without authorization, could result in substantial harm, embarrassment, inconvenience, or unfairness to an individual.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    }
+                ],
+                "fieldsUpdated": [],
+                "fieldsDeleted": [],
+                "previousVersion": 0.1
+            },
+            "deleted": false,
+            "sourceHash": "c626e8b63d52b1bef3ce533b2bbaf7f0"
+        },
+        {
+            "id": "00d4efed-4e65-43e9-a9a8-55df69f66b9a",
+            "name": "C2WLeague",
+            "fullyQualifiedName": "DWH.SetDB.dbo.C2WLeague",
+            "version": 0.2,
+            "updatedAt": 1731556142438,
+            "updatedBy": "profiler-bot",
+            "href": "http://localhost:8585/api/v1/tables/00d4efed-4e65-43e9-a9a8-55df69f66b9a",
+            "tableType": "Regular",
+            "columns": [
+                {
+                    "name": "League_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WLeague.League_Id",
+                    "constraint": "PRIMARY_KEY"
+                },
+                {
+                    "name": "League_Name",
+                    "dataType": "VARCHAR",
+                    "dataLength": 255,
+                    "dataTypeDisplay": "varchar(255)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WLeague.League_Name",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "League_Detail",
+                    "dataType": "VARCHAR",
+                    "dataLength": 255,
+                    "dataTypeDisplay": "varchar(255)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WLeague.League_Detail",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "League_Prefix",
+                    "dataType": "VARCHAR",
+                    "dataLength": 5,
+                    "dataTypeDisplay": "varchar(5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WLeague.League_Prefix",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Start_Date",
+                    "dataType": "DATE",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "date",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WLeague.Start_Date",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "End_Date",
+                    "dataType": "DATE",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "date",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WLeague.End_Date",
+                    "constraint": "NULL"
+                }
+            ],
+            "databaseSchema": {
+                "id": "49869263-edf5-4ae2-b855-69b962ce8012",
+                "type": "databaseSchema",
+                "name": "dbo",
+                "fullyQualifiedName": "DWH.SetDB.dbo",
+                "displayName": "dbo",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databaseSchemas/49869263-edf5-4ae2-b855-69b962ce8012"
+            },
+            "database": {
+                "id": "5cad45b2-96fb-47d7-adc3-dcde14efb55b",
+                "type": "database",
+                "name": "SetDB",
+                "fullyQualifiedName": "DWH.SetDB",
+                "displayName": "SetDB",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databases/5cad45b2-96fb-47d7-adc3-dcde14efb55b"
+            },
+            "service": {
+                "id": "3d2b9575-db1e-4753-a189-8ad79318c89a",
+                "type": "databaseService",
+                "name": "DWH",
+                "fullyQualifiedName": "DWH",
+                "displayName": "DWH",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/services/databaseServices/3d2b9575-db1e-4753-a189-8ad79318c89a"
+            },
+            "serviceType": "Mssql",
+            "changeDescription": {
+                "fieldsAdded": [
+                    {
+                        "name": "columns.Start_Date.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.End_Date.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    }
+                ],
+                "fieldsUpdated": [],
+                "fieldsDeleted": [],
+                "previousVersion": 0.1
+            },
+            "deleted": false,
+            "sourceHash": "00d5f13cf0acee50eb1fef49db918df8"
+        },
+        {
+            "id": "779e864e-e6d0-404b-81ef-850fae253071",
+            "name": "C2WOrder",
+            "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder",
+            "version": 0.2,
+            "updatedAt": 1731556144638,
+            "updatedBy": "profiler-bot",
+            "href": "http://localhost:8585/api/v1/tables/779e864e-e6d0-404b-81ef-850fae253071",
+            "tableType": "Regular",
+            "columns": [
+                {
+                    "name": "Order_No",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Order_No"
+                },
+                {
+                    "name": "Account_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Account_Id",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Security_Id_S",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Security_Id_S"
+                },
+                {
+                    "name": "Trading_Side",
+                    "dataType": "CHAR",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "char(1)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Trading_Side",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Position",
+                    "dataType": "CHAR",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "char(1)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Position",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Volume",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Volume",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Matched_Volume",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Matched_Volume",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Price",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 15,
+                    "scale": 6,
+                    "dataTypeDisplay": "decimal(15,6)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Price",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Validity",
+                    "dataType": "CHAR",
+                    "dataLength": 3,
+                    "dataTypeDisplay": "char(3)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Validity",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Order_Date",
+                    "dataType": "DATE",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "date",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Order_Date",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Order_Time",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Order_Time",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Order_Status",
+                    "dataType": "CHAR",
+                    "dataLength": 3,
+                    "dataTypeDisplay": "char(3)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WOrder.Order_Status",
+                    "constraint": "NULL"
+                }
+            ],
+            "databaseSchema": {
+                "id": "49869263-edf5-4ae2-b855-69b962ce8012",
+                "type": "databaseSchema",
+                "name": "dbo",
+                "fullyQualifiedName": "DWH.SetDB.dbo",
+                "displayName": "dbo",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databaseSchemas/49869263-edf5-4ae2-b855-69b962ce8012"
+            },
+            "database": {
+                "id": "5cad45b2-96fb-47d7-adc3-dcde14efb55b",
+                "type": "database",
+                "name": "SetDB",
+                "fullyQualifiedName": "DWH.SetDB",
+                "displayName": "SetDB",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databases/5cad45b2-96fb-47d7-adc3-dcde14efb55b"
+            },
+            "service": {
+                "id": "3d2b9575-db1e-4753-a189-8ad79318c89a",
+                "type": "databaseService",
+                "name": "DWH",
+                "fullyQualifiedName": "DWH",
+                "displayName": "DWH",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/services/databaseServices/3d2b9575-db1e-4753-a189-8ad79318c89a"
+            },
+            "serviceType": "Mssql",
+            "changeDescription": {
+                "fieldsAdded": [
+                    {
+                        "name": "columns.Security_Id_S.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Volume.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Matched_Volume.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Order_Date.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Order_Time.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    }
+                ],
+                "fieldsUpdated": [],
+                "fieldsDeleted": [],
+                "previousVersion": 0.1
+            },
+            "deleted": false,
+            "sourceHash": "0ba27e13c3572c28589eea05b028effb"
+        },
+        {
+            "id": "8db25a6c-4fa3-4a59-b312-021aacd45e89",
+            "name": "C2WPort",
+            "fullyQualifiedName": "DWH.SetDB.dbo.C2WPort",
+            "version": 0.2,
+            "updatedAt": 1731556146057,
+            "updatedBy": "profiler-bot",
+            "href": "http://localhost:8585/api/v1/tables/8db25a6c-4fa3-4a59-b312-021aacd45e89",
+            "tableType": "Regular",
+            "columns": [
+                {
+                    "name": "Account_id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WPort.Account_id"
+                },
+                {
+                    "name": "Security_Id_S",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WPort.Security_Id_S"
+                },
+                {
+                    "name": "Current_Volume",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WPort.Current_Volume",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Actual_Volme",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WPort.Actual_Volme",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Current_Price",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 10,
+                    "dataTypeDisplay": "decimal(20,10)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WPort.Current_Price",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Realize_Pl",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 17,
+                    "scale": 6,
+                    "dataTypeDisplay": "decimal(17,6)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WPort.Realize_Pl",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Currency",
+                    "dataType": "VARCHAR",
+                    "dataLength": 5,
+                    "dataTypeDisplay": "varchar(5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WPort.Currency",
+                    "constraint": "NULL"
+                }
+            ],
+            "databaseSchema": {
+                "id": "49869263-edf5-4ae2-b855-69b962ce8012",
+                "type": "databaseSchema",
+                "name": "dbo",
+                "fullyQualifiedName": "DWH.SetDB.dbo",
+                "displayName": "dbo",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databaseSchemas/49869263-edf5-4ae2-b855-69b962ce8012"
+            },
+            "database": {
+                "id": "5cad45b2-96fb-47d7-adc3-dcde14efb55b",
+                "type": "database",
+                "name": "SetDB",
+                "fullyQualifiedName": "DWH.SetDB",
+                "displayName": "SetDB",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databases/5cad45b2-96fb-47d7-adc3-dcde14efb55b"
+            },
+            "service": {
+                "id": "3d2b9575-db1e-4753-a189-8ad79318c89a",
+                "type": "databaseService",
+                "name": "DWH",
+                "fullyQualifiedName": "DWH",
+                "displayName": "DWH",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/services/databaseServices/3d2b9575-db1e-4753-a189-8ad79318c89a"
+            },
+            "serviceType": "Mssql",
+            "changeDescription": {
+                "fieldsAdded": [
+                    {
+                        "name": "columns.Current_Volume.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Actual_Volme.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    }
+                ],
+                "fieldsUpdated": [],
+                "fieldsDeleted": [],
+                "previousVersion": 0.1
+            },
+            "deleted": false,
+            "sourceHash": "84c0082ebcdbb4bedeb4a5870d57f22f"
+        },
+        {
+            "id": "c32c2aad-764e-48df-87ab-923e32a07341",
+            "name": "C2WRankingDerivatives",
+            "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives",
+            "version": 0.2,
+            "updatedAt": 1731556149097,
+            "updatedBy": "profiler-bot",
+            "href": "http://localhost:8585/api/v1/tables/c32c2aad-764e-48df-87ab-923e32a07341",
+            "tableType": "Regular",
+            "columns": [
+                {
+                    "name": "Group_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.Group_Id"
+                },
+                {
+                    "name": "Account_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.Account_Id"
+                },
+                {
+                    "name": "Period_Type",
+                    "dataType": "CHAR",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "char(1)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.Period_Type"
+                },
+                {
+                    "name": "Period",
+                    "dataType": "SMALLINT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "smallint",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.Period"
+                },
+                {
+                    "name": "Liquidation",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 5,
+                    "dataTypeDisplay": "decimal(20,5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.Liquidation",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Order_Match",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Order_Match",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match_S50_FUT",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match_S50_FUT",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match_S50_OPT",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match_S50_OPT",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match_GOLD_FUT",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match_GOLD_FUT",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match_STOCK_FUT",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match_STOCK_FUT",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match_GOLD10_FUT",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match_GOLD10_FUT",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match_IR_FUT",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match_IR_FUT",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match_ENERGY_FUT",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match_ENERGY_FUT",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match_CURRENCY_FUT",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match_CURRENCY_FUT",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match_SECTOR_FUT",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match_SECTOR_FUT",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match_TXA_FUT",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match_TXA_FUT",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Contract_Match_TXD_FUT",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.No_Contract_Match_TXD_FUT",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Percent_Change",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 5,
+                    "dataTypeDisplay": "decimal(20,5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.Percent_Change",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Percent_Change_Initial",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 5,
+                    "dataTypeDisplay": "decimal(20,5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.Percent_Change_Initial",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Ranking_No",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.Ranking_No",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Ranking_No_Initial",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.Ranking_No_Initial",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Ranking_Date",
+                    "dataType": "DATE",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "date",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingDerivatives.Ranking_Date",
+                    "constraint": "NULL"
+                }
+            ],
+            "databaseSchema": {
+                "id": "49869263-edf5-4ae2-b855-69b962ce8012",
+                "type": "databaseSchema",
+                "name": "dbo",
+                "fullyQualifiedName": "DWH.SetDB.dbo",
+                "displayName": "dbo",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databaseSchemas/49869263-edf5-4ae2-b855-69b962ce8012"
+            },
+            "database": {
+                "id": "5cad45b2-96fb-47d7-adc3-dcde14efb55b",
+                "type": "database",
+                "name": "SetDB",
+                "fullyQualifiedName": "DWH.SetDB",
+                "displayName": "SetDB",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databases/5cad45b2-96fb-47d7-adc3-dcde14efb55b"
+            },
+            "service": {
+                "id": "3d2b9575-db1e-4753-a189-8ad79318c89a",
+                "type": "databaseService",
+                "name": "DWH",
+                "fullyQualifiedName": "DWH",
+                "displayName": "DWH",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/services/databaseServices/3d2b9575-db1e-4753-a189-8ad79318c89a"
+            },
+            "serviceType": "Mssql",
+            "changeDescription": {
+                "fieldsAdded": [
+                    {
+                        "name": "columns.Ranking_Date.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    }
+                ],
+                "fieldsUpdated": [],
+                "fieldsDeleted": [],
+                "previousVersion": 0.1
+            },
+            "deleted": false,
+            "sourceHash": "abef393cfbb752750c1854b32b324a2c"
+        },
+        {
+            "id": "d4e9a9cc-52ce-4307-bf47-03dadbe3db31",
+            "name": "C2WRankingEquity",
+            "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity",
+            "version": 0.2,
+            "updatedAt": 1731556151823,
+            "updatedBy": "profiler-bot",
+            "href": "http://localhost:8585/api/v1/tables/d4e9a9cc-52ce-4307-bf47-03dadbe3db31",
+            "tableType": "Regular",
+            "columns": [
+                {
+                    "name": "Group_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Group_Id"
+                },
+                {
+                    "name": "Account_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Account_Id"
+                },
+                {
+                    "name": "Period_Type",
+                    "dataType": "CHAR",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "char(1)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Period_Type"
+                },
+                {
+                    "name": "Period",
+                    "dataType": "SMALLINT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "smallint",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Period"
+                },
+                {
+                    "name": "Net_Asset",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 5,
+                    "dataTypeDisplay": "decimal(20,5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Net_Asset",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Portfolio_Value",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 5,
+                    "dataTypeDisplay": "decimal(20,5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Portfolio_Value",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Portfolio_Value_DW",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 5,
+                    "dataTypeDisplay": "decimal(20,5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Portfolio_Value_DW",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Match_Order",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.No_Match_Order",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "No_Match_Order_DW",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.No_Match_Order_DW",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Portfolio_List_Count",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Portfolio_List_Count",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Portfolio_List_Count_DW",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 0,
+                    "dataTypeDisplay": "decimal(20,0)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Portfolio_List_Count_DW",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Profit",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 5,
+                    "dataTypeDisplay": "decimal(20,5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Profit",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Profit_DW",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 5,
+                    "dataTypeDisplay": "decimal(20,5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Profit_DW",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Percent_Change",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 5,
+                    "dataTypeDisplay": "decimal(20,5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Percent_Change",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Percent_Change_Initial",
+                    "dataType": "DECIMAL",
+                    "dataLength": 1,
+                    "precision": 20,
+                    "scale": 5,
+                    "dataTypeDisplay": "decimal(20,5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Percent_Change_Initial",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Ranking_No",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Ranking_No",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Ranking_No_Initial",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Ranking_No_Initial",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Ranking_Date",
+                    "dataType": "DATE",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "date",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WRankingEquity.Ranking_Date",
+                    "constraint": "NULL"
+                }
+            ],
+            "databaseSchema": {
+                "id": "49869263-edf5-4ae2-b855-69b962ce8012",
+                "type": "databaseSchema",
+                "name": "dbo",
+                "fullyQualifiedName": "DWH.SetDB.dbo",
+                "displayName": "dbo",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databaseSchemas/49869263-edf5-4ae2-b855-69b962ce8012"
+            },
+            "database": {
+                "id": "5cad45b2-96fb-47d7-adc3-dcde14efb55b",
+                "type": "database",
+                "name": "SetDB",
+                "fullyQualifiedName": "DWH.SetDB",
+                "displayName": "SetDB",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databases/5cad45b2-96fb-47d7-adc3-dcde14efb55b"
+            },
+            "service": {
+                "id": "3d2b9575-db1e-4753-a189-8ad79318c89a",
+                "type": "databaseService",
+                "name": "DWH",
+                "fullyQualifiedName": "DWH",
+                "displayName": "DWH",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/services/databaseServices/3d2b9575-db1e-4753-a189-8ad79318c89a"
+            },
+            "serviceType": "Mssql",
+            "changeDescription": {
+                "fieldsAdded": [
+                    {
+                        "name": "columns.Portfolio_Value.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Percent_Change.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Percent_Change_Initial.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Ranking_Date.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    }
+                ],
+                "fieldsUpdated": [],
+                "fieldsDeleted": [],
+                "previousVersion": 0.1
+            },
+            "deleted": false,
+            "sourceHash": "ce5ce486f5fb7f38e5a9da6fc92b72f6"
+        },
+        {
+            "id": "5dad26ee-0df9-4c08-9108-a6e0b71d9819",
+            "name": "C2WSocialAccount",
+            "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialAccount",
+            "version": 0.2,
+            "updatedAt": 1731556152942,
+            "updatedBy": "profiler-bot",
+            "href": "http://localhost:8585/api/v1/tables/5dad26ee-0df9-4c08-9108-a6e0b71d9819",
+            "tableType": "Regular",
+            "columns": [
+                {
+                    "name": "Account_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialAccount.Account_Id",
+                    "constraint": "PRIMARY_KEY"
+                },
+                {
+                    "name": "Member_Id",
+                    "dataType": "VARCHAR",
+                    "dataLength": 20,
+                    "dataTypeDisplay": "varchar(20)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialAccount.Member_Id",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "League_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialAccount.League_Id",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Account_No_Equity",
+                    "dataType": "VARCHAR",
+                    "dataLength": 25,
+                    "dataTypeDisplay": "varchar(25)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialAccount.Account_No_Equity",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Account_No_Derivatives",
+                    "dataType": "VARCHAR",
+                    "dataLength": 25,
+                    "dataTypeDisplay": "varchar(25)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialAccount.Account_No_Derivatives",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Activate_Date",
+                    "dataType": "DATE",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "date",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialAccount.Activate_Date",
+                    "constraint": "NULL"
+                }
+            ],
+            "databaseSchema": {
+                "id": "49869263-edf5-4ae2-b855-69b962ce8012",
+                "type": "databaseSchema",
+                "name": "dbo",
+                "fullyQualifiedName": "DWH.SetDB.dbo",
+                "displayName": "dbo",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databaseSchemas/49869263-edf5-4ae2-b855-69b962ce8012"
+            },
+            "database": {
+                "id": "5cad45b2-96fb-47d7-adc3-dcde14efb55b",
+                "type": "database",
+                "name": "SetDB",
+                "fullyQualifiedName": "DWH.SetDB",
+                "displayName": "SetDB",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databases/5cad45b2-96fb-47d7-adc3-dcde14efb55b"
+            },
+            "service": {
+                "id": "3d2b9575-db1e-4753-a189-8ad79318c89a",
+                "type": "databaseService",
+                "name": "DWH",
+                "fullyQualifiedName": "DWH",
+                "displayName": "DWH",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/services/databaseServices/3d2b9575-db1e-4753-a189-8ad79318c89a"
+            },
+            "serviceType": "Mssql",
+            "changeDescription": {
+                "fieldsAdded": [
+                    {
+                        "name": "columns.Member_Id.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Activate_Date.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    }
+                ],
+                "fieldsUpdated": [],
+                "fieldsDeleted": [],
+                "previousVersion": 0.1
+            },
+            "deleted": false,
+            "sourceHash": "1a637e11b9db73edc1dc57cd0f1a9231"
+        },
+        {
+            "id": "728eaf9a-8e42-420d-bd34-7826417a6175",
+            "name": "C2WSocialLeague",
+            "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialLeague",
+            "version": 0.2,
+            "updatedAt": 1731556154284,
+            "updatedBy": "profiler-bot",
+            "href": "http://localhost:8585/api/v1/tables/728eaf9a-8e42-420d-bd34-7826417a6175",
+            "tableType": "Regular",
+            "columns": [
+                {
+                    "name": "League_Id",
+                    "dataType": "INT",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "int",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialLeague.League_Id",
+                    "constraint": "PRIMARY_KEY"
+                },
+                {
+                    "name": "League_Name",
+                    "dataType": "VARCHAR",
+                    "dataLength": 255,
+                    "dataTypeDisplay": "varchar(255)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialLeague.League_Name",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "League_Detail",
+                    "dataType": "VARCHAR",
+                    "dataLength": 255,
+                    "dataTypeDisplay": "varchar(255)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialLeague.League_Detail",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "League_Prefix",
+                    "dataType": "VARCHAR",
+                    "dataLength": 5,
+                    "dataTypeDisplay": "varchar(5)",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialLeague.League_Prefix",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "Start_Date",
+                    "dataType": "DATE",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "date",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialLeague.Start_Date",
+                    "constraint": "NULL"
+                },
+                {
+                    "name": "End_Date",
+                    "dataType": "DATE",
+                    "dataLength": 1,
+                    "dataTypeDisplay": "date",
+                    "fullyQualifiedName": "DWH.SetDB.dbo.C2WSocialLeague.End_Date",
+                    "constraint": "NULL"
+                }
+            ],
+            "databaseSchema": {
+                "id": "49869263-edf5-4ae2-b855-69b962ce8012",
+                "type": "databaseSchema",
+                "name": "dbo",
+                "fullyQualifiedName": "DWH.SetDB.dbo",
+                "displayName": "dbo",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databaseSchemas/49869263-edf5-4ae2-b855-69b962ce8012"
+            },
+            "database": {
+                "id": "5cad45b2-96fb-47d7-adc3-dcde14efb55b",
+                "type": "database",
+                "name": "SetDB",
+                "fullyQualifiedName": "DWH.SetDB",
+                "displayName": "SetDB",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/databases/5cad45b2-96fb-47d7-adc3-dcde14efb55b"
+            },
+            "service": {
+                "id": "3d2b9575-db1e-4753-a189-8ad79318c89a",
+                "type": "databaseService",
+                "name": "DWH",
+                "fullyQualifiedName": "DWH",
+                "displayName": "DWH",
+                "deleted": false,
+                "href": "http://localhost:8585/api/v1/services/databaseServices/3d2b9575-db1e-4753-a189-8ad79318c89a"
+            },
+            "serviceType": "Mssql",
+            "changeDescription": {
+                "fieldsAdded": [
+                    {
+                        "name": "columns.League_Name.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.Start_Date.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    },
+                    {
+                        "name": "columns.End_Date.tags",
+                        "newValue": "[{\"tagFQN\":\"PII.NonSensitive\",\"name\":\"NonSensitive\",\"description\":\"PII which is easily accessible from public sources and can include zip code, race, gender, and date of birth.\",\"source\":\"Classification\",\"labelType\":\"Automated\",\"state\":\"Suggested\"}]"
+                    }
+                ],
+                "fieldsUpdated": [],
+                "fieldsDeleted": [],
+                "previousVersion": 0.1
+            },
+            "deleted": false,
+            "sourceHash": "c8305231eb14d79456eebe41cd360b01"
+        }
+    ],
+    "paging": {
+        "after": "eyJpZCI6IjcyOGVhZjlhLThlNDItNDIwZC1iZDM0LTc4MjY0MTdhNjE3NSIsIm5hbWUiOiJDMldTb2NpYWxMZWFndWUifQ==",
+        "total": 39
+    }
+}

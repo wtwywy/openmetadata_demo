@@ -1,0 +1,256 @@
+# Top-level structure: A dictionary with service names as keys (e.g., `local_airflow`, `abc_airflow`)
+# Each service contains dict of pipelines using pipeline_fqn as a key.
+# Each pipeline contains details such as source, destination, and column lineage.
+
+
+# see https://docs.open-metadata.org/latest/connectors/pipeline/airflow/configuring-lineage for list of entity type
+
+local_airflow:
+  click2win:
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.C2WUser
+      dest_fqn: DWH.SetDB.dbo.C2WAccount
+      column_lineages:
+        - fromColumns:
+            - Member_Id
+          toColumn: Member_Id
+      description: where C2WUser.User_Ref = input.USERREF
+    
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.C2WSocialUser
+      dest_fqn: DWH.SetDB.dbo.C2WSocialAccount
+      column_lineages:
+        - fromColumns:
+            - Member_Id
+          toColumn: Member_Id
+      description: where C2WSocialUser.User_Ref = input.USERREF
+    
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.C2WAccount
+      dest_fqn: DWH.SetDB.dbo.C2WOrder
+      column_lineages:
+        - fromColumns:
+            - Account_Id
+          toColumn: Account_Id
+      description: lookup on account_no
+
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.SecuritySurrogate
+      dest_fqn: DWH.SetDB.dbo.C2WOrder
+      column_lineages:
+        - fromColumns:
+            - Security_Id_S
+          toColumn: Security_Id_S
+      description: lookup on stock_symbol
+
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.C2WSocialAccount
+      dest_fqn: DWH.SetDB.dbo.C2WSocialOrder
+      column_lineages:
+        - fromColumns:
+            - Account_Id
+          toColumn: Account_Id
+      description: lookup on account_no
+
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.SecuritySurrogate
+      dest_fqn: DWH.SetDB.dbo.C2WSocialOrder
+      column_lineages:
+        - fromColumns:
+            - Security_Id_S
+          toColumn: Security_Id_S
+      description: lookup on stock_symbol
+
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.C2WAccount
+      dest_fqn: DWH.SetDB.dbo.C2WRankingEquity
+      column_lineages:
+        - fromColumns:
+            - Account_Id
+          toColumn: Account_Id
+      description: lookup on Account_No_Equity
+    
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.C2WAccount
+      dest_fqn: DWH.SetDB.dbo.C2WRankingDerivatives
+      column_lineages:
+        - fromColumns:
+            - Account_Id
+          toColumn: Account_Id
+      description: lookup on Account_No_Derivatives
+
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.C2WAccount
+      dest_fqn: DWH.SetDB.dbo.C2WPort
+      column_lineages:
+        - fromColumns:
+            - Account_Id
+          toColumn: Account_id
+      description: lookup on account_no
+
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.SecuritySurrogate
+      dest_fqn: DWH.SetDB.dbo.C2WPort
+      column_lineages:
+        - fromColumns:
+            - Security_Id_S
+          toColumn: Security_Id_S
+      description: lookup on stock_symbol
+    
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.SecuritySurrogate
+      dest_fqn: DWH.SetDB.dbo.C2WSocialPort
+      column_lineages:
+        - fromColumns:
+            - Security_Id_S
+          toColumn: Security_Id_S
+      description: lookup on stock_symbol
+
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.C2WSocialAccount
+      dest_fqn: DWH.SetDB.dbo.C2WSocialPort
+      column_lineages:
+        - fromColumns:
+            - Account_Id
+          toColumn: Account_id
+      description: lookup on account_no
+
+    - source_type: container
+      dest_type: table
+      source_fqn: FileStorage.order_equity_csv
+      dest_fqn: DWH.SetDB.dbo.C2WInvalidData
+      column_lineages:
+        - fromColumns:
+            - ACCOUNT_NO
+            - STOCK
+          toColumn: Value
+        - fromColumns:
+            - ORDER_DATE
+          toColumn: Date
+      description: "take STOCK that can't be lookup for Security_Id_S and take ACCOUNT_NO that can't be lookup for Account_Id to C2WInvalidData"
+    
+    - source_type: container
+      dest_type: table
+      source_fqn: FileStorage.order_equity_csv
+      dest_fqn: DWH.SetDB.dbo.C2WOrder
+      column_lineages:
+        - fromColumns:
+            - ORDER_NO
+          toColumn: Order_No
+        - fromColumns:
+            - ACCOUNT_NO
+          toColumn: Account_Id
+        - fromColumns:
+            - STOCK
+          toColumn: Security_Id_S
+        - fromColumns:
+            - SIDE
+          toColumn: Trading_Side
+        - fromColumns:
+            - VOLUME
+          toColumn: Volume
+        - fromColumns:
+            - MATCH_VOLUME
+          toColumn: Matched_Volume
+        - fromColumns:
+            - PRICE
+          toColumn: Price
+        - fromColumns:
+            - VALIDITY
+          toColumn: Validity
+        - fromColumns:
+            - ORDER_DATE
+          toColumn: Order_Date
+        - fromColumns:
+            - ORDER_DATE
+          toColumn: Order_Time
+        - fromColumns:
+            - STATUS
+          toColumn: Order_Status
+      description: "ETL"
+    - source_type: container
+      dest_type: table
+      source_fqn: FileStorage.order_deriv_csv
+      dest_fqn: DWH.SetDB.dbo.C2WOrder
+      column_lineages:
+        - fromColumns:
+            - ORDER_NO
+          toColumn: Order_No
+        - fromColumns:
+            - ACCOUNT_NO
+          toColumn: Account_Id
+        - fromColumns:
+            - STOCK
+          toColumn: Security_Id_S
+        - fromColumns:
+            - SIDE
+          toColumn: Trading_Side
+        - fromColumns:
+            - POS
+          toColumn: Position
+        - fromColumns:
+            - VOLUME
+          toColumn: Volume
+        - fromColumns:
+            - MATCH_VOLUME
+          toColumn: Matched_Volume
+        - fromColumns:
+            - PRICE
+          toColumn: Price
+        - fromColumns:
+            - VALIDITY
+          toColumn: Validity
+        - fromColumns:
+            - ORDER_DATE
+          toColumn: Order_Date
+        - fromColumns:
+            - ORDER_DATE
+          toColumn: Order_Time
+        - fromColumns:
+            - STATUS
+          toColumn: Order_Status
+      description: "ETL"
+
+
+  happy_money:
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.ELearningCourse
+      dest_fqn: DWH.SetDB.dbo.HappyMoneyUser
+      column_lineages:
+        - fromColumns:
+            - Course_Id
+          toColumn: Course_Id
+      description: lookup course id
+    - source_type: table
+      dest_type: table
+      source_fqn: DWH.SetDB.dbo.HappyMoneyTransaction
+      dest_fqn: DWH.SetDB.dbo.HappyMoneyUser
+      column_lineages:
+        - fromColumns:
+            - Transaction_Date
+          toColumn: First_Transaction_Date
+        - fromColumns:
+            - Transaction_Date
+          toColumn: Last_Transaction_Date
+      description: lookup Transaction_Date
+  
+  hr_dag:
+    - source_type: table
+      dest_type: dashboard
+      source_fqn: DWH.SetDB.dbo.HrEmployeeProfile
+      dest_fqn: testPowerBIService.xyzReport
+      description: report of col xxx
+      sql_query: SELECT * FROM HrEmployeeProfile

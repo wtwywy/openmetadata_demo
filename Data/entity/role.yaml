@@ -1,0 +1,5 @@
+- name: Intern
+  displayName: Intern
+  description: "role for Intern"
+  policies: 
+    - accessPolicy

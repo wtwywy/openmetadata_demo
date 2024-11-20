@@ -1,0 +1,27 @@
+- name: '64050224'
+  displayName: Witthawat Yaowayang
+  email: 64050224@kmitl.ac.th
+  teams:
+    - "dataAnalytic"
+  roles:
+    - "Intern"
+    - "DataSteward"
+
+- name: withawhat
+  displayName: Withawhat Y.
+  email: withawhat@gmail.com
+  description: no
+  teams:
+    - "TDX"
+  roles:
+    - "Intern"
+
+- name: pong
+  displayName: Pong Hinlekfai
+  email: p.hinlekfai@hlf.com
+
+- name: BIman
+  displayName: Ido BizIntel
+  email: biman@bus.com
+  teams:
+    - "BI"

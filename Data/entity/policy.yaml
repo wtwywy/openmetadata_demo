@@ -1,0 +1,23 @@
+- name: accessPolicy
+  displayName: accessPolicy
+  description: ""
+  rules:
+    - name: blockAccessTag1
+      description: ""
+      effect: deny
+      operations:
+        - All
+      #* metadata.generated.schema.entity.plocies.accessControl.resourceDescriptor.py
+      resources:
+        - All
+      #* Resources/objects related to this rule. Resources are typically `entityTypes` such as `table`, `database`, etc. It also includes `non-entityType` resources such as `lineage`. Use `*` to include all the resources.
+      condition: "matchAnyTag('access.tag1')"
+      #* ! || && hasAnyRole() hasDomain() inAnyTeam() isOwner() noOwner() matchAllTags() matchAnyTag()
+    - name: blockSampleDataIfNotOnwer
+      description: ""
+      effect: deny
+      operations:
+        - ViewSampleData
+      resources:
+        - table
+      condition: "!isOwner"
