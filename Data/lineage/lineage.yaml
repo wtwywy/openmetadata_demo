@@ -2,11 +2,10 @@
 # Each service contains dict of pipelines using pipeline_fqn as a key.
 # Each pipeline contains details such as source, destination, and column lineage.
 
-
 # see https://docs.open-metadata.org/latest/connectors/pipeline/airflow/configuring-lineage for list of entity type
 
-local_airflow:
-  click2win:
+local_airflow: #pipeline service name
+  click2win: #dag name
     - source_type: table
       dest_type: table
       source_fqn: DWH.SetDB.dbo.C2WUser

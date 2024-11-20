@@ -1,9 +1,9 @@
 demo step
   - install python
   - pip install -r requirements.txt
-  - download docker compose file
+  - download docker compose file (https://github.com/open-metadata/OpenMetadata/releases)
   - docker-compose up -d 
-  - get bot token put in code and airflow cfg
+  - get bot token and put it in Config and airflow's cfg
   - write/edit data in ../Data
   - run script (_1setup.py)
   - create mssql ingestion pipeline and run
