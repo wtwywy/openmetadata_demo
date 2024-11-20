@@ -5,6 +5,8 @@ import connection
 from metadata.generated.schema.api.services.createApiService import CreateApiServiceRequest
 from metadata.generated.schema.entity.services.apiService import ApiServiceConnection
 from metadata.generated.schema.entity.services.connections.apiService.restConnection import RESTConnection
+from metadata.generated.schema.api.data.createAPICollection import CreateAPICollectionRequest
+from metadata.generated.schema.api.data.createAPIEndpoint import CreateAPIEndpointRequest
 
 def create_api_service(service_name, desc, url):
     bot = connection.get_bot()
@@ -22,7 +24,6 @@ def create_api_service(service_name, desc, url):
     print(f"Service '{service.name}' created successfully!")
     return service
 
-from metadata.generated.schema.api.data.createAPICollection import CreateAPICollectionRequest
 def create_api_collection(collection_name, desc, service_fqn, url):
     bot = connection.get_bot()
     collection = CreateAPICollectionRequest(
@@ -34,8 +35,6 @@ def create_api_collection(collection_name, desc, service_fqn, url):
     collection = bot.create_or_update(collection)
     print(f"Collection '{collection.name}' created successfully!")
     return collection
-
-from metadata.generated.schema.api.data.createAPIEndpoint import CreateAPIEndpointRequest
 def create_api_endpoint(endpoint_name, desc, collection_fqn, url):
     bot = connection.get_bot()
     endpoint = CreateAPIEndpointRequest(

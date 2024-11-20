@@ -4,7 +4,6 @@
 import requests
 import yaml
 import json
-from dotenv import load_dotenv
 from Script import entity
 
 with open("Config/config.yaml", "r") as config_file:
@@ -155,9 +154,7 @@ def add_asset_to_glossary_term(id, asset_id, asset_type):
     except Exception as e:
         print(f"An error occurred: {e}")
         
-        
-import requests
-import json
+
 def add_tag_to_table(fqn):
     """
         original code from dev on slack 

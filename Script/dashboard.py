@@ -3,8 +3,10 @@
 """
 import connection
 import yaml
+from metadata.generated.schema.api.services.createDashboardService import CreateDashboardServiceRequest   
+from metadata.generated.schema.api.data.createDashboard import CreateDashboardRequest
+from metadata.generated.schema.api.data.createChart import CreateChartRequest 
 
-from metadata.generated.schema.api.services.createDashboardService import CreateDashboardServiceRequest    
 def create_dashboard_service(name, displayName, desc, service_type):
     bot = connection.get_bot()
     service = CreateDashboardServiceRequest(
@@ -17,7 +19,6 @@ def create_dashboard_service(name, displayName, desc, service_type):
     print(f"dashboard service '{name}' created successfully!")
     return service
 
-from metadata.generated.schema.api.data.createDashboard import CreateDashboardRequest
 def create_dashboard(name, displayName, desc, service_fqn):
     bot = connection.get_bot()
     dashboard = CreateDashboardRequest(
@@ -29,7 +30,7 @@ def create_dashboard(name, displayName, desc, service_fqn):
     dashboard = bot.create_or_update(dashboard)
     print(f"dashboard '{name}' created successfully!")
     return dashboard
-from metadata.generated.schema.api.data.createChart import CreateChartRequest
+
 def create_chart(name, displayName, desc, chartType, service_fqn, dashboard_fqns=None):
     bot = connection.get_bot()
     chart = CreateChartRequest(

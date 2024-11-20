@@ -3,8 +3,15 @@
 """
 import connection
 import yaml
-
+import entity
+from metadata.ingestion.models.table_metadata import ColumnTag
+from metadata.generated.schema.type.tagLabel import TagLabel
+from metadata.ingestion.ometa.mixins.patch_mixin_utils import PatchOperation
 from metadata.generated.schema.api.classification.createClassification import CreateClassificationRequest
+from metadata.generated.schema.api.classification.createTag import CreateTagRequest
+from metadata.generated.schema.api.data.createGlossary import CreateGlossaryRequest
+from metadata.generated.schema.api.data.createGlossaryTerm import CreateGlossaryTermRequest
+
 def create_classification(name, displayName, description, mutuallyExclusive):
     bot = connection.get_bot()
     classification = CreateClassificationRequest(
@@ -17,7 +24,6 @@ def create_classification(name, displayName, description, mutuallyExclusive):
     print(f"classification '{name}' created successfully!")
     return classification
 
-from metadata.generated.schema.api.classification.createTag import CreateTagRequest
 def create_tag(name, display_name, desc, classification_fqn:str =None):
     bot = connection.get_bot()
     tag = CreateTagRequest(
@@ -60,7 +66,6 @@ def create_classification_tag_from_yaml(yaml_file_path):
                     classification_fqn= classif_name
                 )
                 
-from metadata.generated.schema.api.data.createGlossary import CreateGlossaryRequest
 def create_business_glossary(name, display_name, description):
     bot = connection.get_bot()
     glos = CreateGlossaryRequest(
@@ -72,7 +77,6 @@ def create_business_glossary(name, display_name, description):
     print(f"Business glossary '{name}' created successfully!")
     return glos
 
-from metadata.generated.schema.api.data.createGlossaryTerm import CreateGlossaryTermRequest
 def create_glossary_term(glos_fqn, name, display_name,description):
     bot = connection.get_bot()
     glos = CreateGlossaryTermRequest(
@@ -108,10 +112,6 @@ def create_glossary_term_from_file(yaml_file_path):
                     description=term.get('description') or ''
                 )
 
-from metadata.ingestion.models.table_metadata import ColumnTag
-from metadata.generated.schema.type.tagLabel import TagLabel
-from metadata.ingestion.ometa.mixins.patch_mixin_utils import PatchOperation
-import entity
 def assign_tag_to_column_from_yaml(yaml_file_path):
     yaml_data:dict
     with open(yaml_file_path, "r") as file:

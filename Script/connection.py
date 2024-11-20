@@ -6,14 +6,11 @@ from metadata.generated.schema.entity.services.connections.metadata.openMetadata
     OpenMetadataConnection, AuthProvider,
 )
 from metadata.generated.schema.security.client.openMetadataJWTClientConfig import OpenMetadataJWTClientConfig
-from dotenv import load_dotenv
 import yaml
 
 with open("Config/config.yaml", "r") as config_file:
     config = yaml.safe_load(config_file)
 
-# Load environment variables from .env file
-load_dotenv()
 metadata = None
 def get_bot():
     global metadata

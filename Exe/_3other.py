@@ -1,6 +1,6 @@
-from Script import lineage
 
 # data lineage
+from Script import lineage
 lineage.add_lineage_from_yaml("Data/lineage.yaml")
 
 # custom sample data
