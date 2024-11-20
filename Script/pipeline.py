@@ -21,4 +21,4 @@ def create_airflow_service(service_name, host_port):
     )
     service = bot.create_or_update(service)
     print(f"Service '{service.name}' created successfully!")
-    return service.id
+    return service

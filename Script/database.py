@@ -14,7 +14,7 @@ def create_mssql_service(service_name, connection_details):
     )
     service = bot.create_or_update(service)
     print(f"Service '{service.name}' created successfully!")
-    return service.id
+    return service
 
 from metadata.generated.schema.api.data.createStoredProcedure import CreateStoredProcedureRequest
 from metadata.generated.schema.entity.data.storedProcedure import StoredProcedureCode

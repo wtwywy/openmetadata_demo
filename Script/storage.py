@@ -10,7 +10,7 @@ def create_storage_service(service_name, desc, service_type):
     )
     service = bot.create_or_update(service)
     print(f"Service '{service.name}' created successfully!")
-    return service.id
+    return service
 def get_storage_service_fqn_by_uuid(uuid):
     bot = connection.get_bot()
     service = bot.get_by_id(
