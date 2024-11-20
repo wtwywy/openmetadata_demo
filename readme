@@ -1,0 +1,62 @@
+demo step
+  - install python
+  - pip install -r requirements.txt
+  - download docker compose file
+  - docker-compose up -d 
+  - get bot token put in code and airflow cfg
+  - write/edit data in ../Data
+  - run script (_1setup.py)
+  - create mssql ingestion pipeline and run
+    - metadata
+    - profiler (optional)
+  - download airflow_provider_openmetadata from github (https://github.com/open-metadata/OpenMetadata/tree/main/ingestion/src)
+  - edit airflow.cfg at [lineage]
+    - backend = .....airflow_provider_openmetadata.lineage.backend.OpenMetadataLineageBackend
+    - airflow_service_name = name_in_openmetadata
+    - openmetadata_api_endpoint = http://host.docker.internal:8585/api
+    - jwt_token = token form http://localhost:8585/bots/ingestion-bot
+  - run dag (ETL airflow)
+  - run script (_3other.py)
+
+note for self:
+  setup the metadata:
+    most of the setup job sure can be SDK'ed 
+    by create method that read file and use SDK/api to push to opm
+    then collecting most setup data users in org
+    then datacatalog team use the collected data to setup opm project
+  
+  as some metadata/ functionality of opm cant be set via SDK now we still need to use GUI
+
+  then after setup phase, when new data come:
+  - GUI is good option to work aroud some small change of metadata, create new ingestion pipeline, new user, new team
+  - file+SDK is still a good way  
+    - and I recommend to append new data and keep the old data file
+  
+uninstall?
+  - have trying delete local file
+  - at now after re compose the docker file I still see some data in explore page (but i cant go into that data asset)
+  - mysql
+    mysql --user=root --password=password --silent --execute "use openmetadata_db; DROP DATABASE openmetadata_db;"
+    mysql --user=root --password=password --silent --execute "use openmetadata_db; DROP DATABASE airflow_db;"
+  - elastic
+    curl -X PUT "http://localhost:9200/_cluster/settings" -H 'Content-Type: application/json' -d'
+    {
+      "persistent": {
+        "action.destructive_requires_name": "false"
+      }
+    }'
+
+    curl -X DELETE "http://localhost:9200/*"
+
+    curl -X PUT "http://localhost:9200/_cluster/settings" -H 'Content-Type: application/json' -d'
+    {
+      "persistent": {
+        "action.destructive_requires_name": "true"
+      }
+    }'
+
+
+
+
+
+
