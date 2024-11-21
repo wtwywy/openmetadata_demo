@@ -1,6 +1,11 @@
 import connection
+import yaml
 from metadata.generated.schema.api.services.createStorageService import CreateStorageServiceRequest
 from metadata.generated.schema.entity.services.storageService import StorageService
+from metadata.generated.schema.entity.data.container import ContainerDataModel
+from metadata.generated.schema.api.data.createContainer import CreateContainerRequest
+from metadata.generated.schema.entity.data.table import Column
+
 def create_storage_service(service_name, desc, service_type):
     bot = connection.get_bot()
     service = CreateStorageServiceRequest(
@@ -19,8 +24,6 @@ def get_storage_service_fqn_by_uuid(uuid):
     )
     return service.fullyQualifiedName
 
-from metadata.generated.schema.entity.data.container import ContainerDataModel
-from metadata.generated.schema.api.data.createContainer import CreateContainerRequest
 def create_container(name: str,displayName: str, service_fqn: str, column_list:list ,desc: str = ""):
     ingest_bot = connection.get_bot()
     container = CreateContainerRequest(
@@ -36,7 +39,6 @@ def create_container(name: str,displayName: str, service_fqn: str, column_list:l
     print(f"Container '{container.name}' created successfully!")
     return container
 
-from metadata.generated.schema.entity.data.table import Column
 def create_containner_from_yaml(yaml_file_path):
     """
         read yaml file
