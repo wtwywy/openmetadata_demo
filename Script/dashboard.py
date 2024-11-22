@@ -8,7 +8,7 @@ from metadata.generated.schema.api.data.createDashboard import CreateDashboardRe
 from metadata.generated.schema.api.data.createChart import CreateChartRequest 
 
 def create_dashboard_service(name, displayName, desc, service_type):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     service = CreateDashboardServiceRequest(
         name = name,
         displayName=displayName,
@@ -20,7 +20,7 @@ def create_dashboard_service(name, displayName, desc, service_type):
     return service
 
 def create_dashboard(name, displayName, desc, service_fqn):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     dashboard = CreateDashboardRequest(
         name = name,
         displayName=displayName,
@@ -32,7 +32,7 @@ def create_dashboard(name, displayName, desc, service_fqn):
     return dashboard
 
 def create_chart(name, displayName, desc, chartType, service_fqn, dashboard_fqns=None):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     chart = CreateChartRequest(
         name = name,
         displayName=displayName,

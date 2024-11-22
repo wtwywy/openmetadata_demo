@@ -9,7 +9,7 @@ from metadata.generated.schema.api.data.createAPICollection import CreateAPIColl
 from metadata.generated.schema.api.data.createAPIEndpoint import CreateAPIEndpointRequest
 
 def create_api_service(service_name, desc, url):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     service = CreateApiServiceRequest(
         name=service_name,
         serviceType="REST",# | WEBHOOK
@@ -25,7 +25,7 @@ def create_api_service(service_name, desc, url):
     return service
 
 def create_api_collection(collection_name, desc, service_fqn, url):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     collection = CreateAPICollectionRequest(
         name = collection_name,
         description = desc,
@@ -36,7 +36,7 @@ def create_api_collection(collection_name, desc, service_fqn, url):
     print(f"Collection '{collection.name}' created successfully!")
     return collection
 def create_api_endpoint(endpoint_name, desc, collection_fqn, url):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     endpoint = CreateAPIEndpointRequest(
         name = endpoint_name,
         description = desc,

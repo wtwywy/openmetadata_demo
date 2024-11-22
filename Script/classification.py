@@ -13,7 +13,7 @@ from metadata.generated.schema.api.data.createGlossary import CreateGlossaryRequ
 from metadata.generated.schema.api.data.createGlossaryTerm import CreateGlossaryTermRequest
 
 def create_classification(name, displayName, description, mutuallyExclusive):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     classification = CreateClassificationRequest(
         name=name,
         displayName=displayName or None,
@@ -25,7 +25,7 @@ def create_classification(name, displayName, description, mutuallyExclusive):
     return classification
 
 def create_tag(name, display_name, desc, classification_fqn:str =None):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     tag = CreateTagRequest(
         name=name,
         displayName=display_name or None,
@@ -67,7 +67,7 @@ def create_classification_tag_from_yaml(yaml_file_path):
                 )
                 
 def create_business_glossary(name, display_name, description):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     glos = CreateGlossaryRequest(
         name = name,
         displayName=display_name,
@@ -78,7 +78,7 @@ def create_business_glossary(name, display_name, description):
     return glos
 
 def create_glossary_term(glos_fqn, name, display_name,description):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     glos = CreateGlossaryTermRequest(
         glossary=glos_fqn,
         name = name,
@@ -116,7 +116,7 @@ def assign_tag_to_column_from_yaml(yaml_file_path):
     yaml_data:dict
     with open(yaml_file_path, "r") as file:
         yaml_data = yaml.safe_load(file)
-    conn = connection.get_bot()
+    conn = connection.get_connection_obj()
     
     databases:dict
     for service_name, databases in yaml_data.items():

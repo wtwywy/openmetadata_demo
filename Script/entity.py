@@ -5,7 +5,7 @@ from metadata.generated.schema.entity.data.pipeline import Pipeline
 from metadata.generated.schema.entity.data.container import Container
 from metadata.generated.schema.entity.data.dashboard import Dashboard
 def get_entity_by_name(fqn, type:str):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     if type == 'table':
         entity = bot.get_by_name(entity=Table,fqn=fqn)
     elif type == 'container':

@@ -11,7 +11,7 @@ import entity
 
 
 def add_lineage_edge(pipeline_id, source_type, source_fqn, dest_type, dest_fqn, description, col_lineage_list, sqlQuery):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     source_id = entity.get_entity_by_name(source_fqn, source_type).id
     dest_id = entity.get_entity_by_name(dest_fqn, dest_type).id
     lineage=AddLineageRequest(

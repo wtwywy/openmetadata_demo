@@ -8,7 +8,7 @@ from metadata.generated.schema.entity.services.connections.pipeline.backendConne
 import connection
 
 def create_airflow_service(service_name, host_port):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     service = CreatePipelineServiceRequest(
         name=service_name,
         serviceType="Airflow",

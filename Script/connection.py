@@ -12,7 +12,7 @@ with open("Config/config.yaml", "r") as config_file:
     config = yaml.safe_load(config_file)
 
 metadata = None
-def get_bot():
+def get_connection_obj():
     global metadata
     if metadata is None:
         server_config = OpenMetadataConnection(
@@ -24,10 +24,6 @@ def get_bot():
         )
         metadata = OpenMetadata(server_config)
     return metadata
-
-def close_bot():
-    global metadata
-    metadata = None
 
 def get_token():
     return config['ingest_bot_token']

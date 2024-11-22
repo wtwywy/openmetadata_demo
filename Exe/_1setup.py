@@ -2,7 +2,7 @@ from Script import (
     connection, dashboard
 )
 
-bot = connection.get_bot()
+bot = connection.get_connection_obj()
 connection.check_health()
 api_base = "http://localhost:8585"
 

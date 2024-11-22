@@ -7,7 +7,7 @@ from metadata.generated.schema.api.data.createContainer import CreateContainerRe
 from metadata.generated.schema.entity.data.table import Column
 
 def create_storage_service(service_name, desc, service_type):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     service = CreateStorageServiceRequest(
         name=service_name,
         description=desc,
@@ -25,7 +25,7 @@ def get_storage_service_fqn_by_uuid(uuid):
     return service.fullyQualifiedName
 
 def create_container(name: str,displayName: str, service_fqn: str, column_list:list ,desc: str = ""):
-    ingest_bot = connection.get_bot()
+    ingest_bot = connection.get_connection_obj()
     container = CreateContainerRequest(
         name=name,
         displayName=displayName,
@@ -46,7 +46,6 @@ def create_containner_from_yaml(yaml_file_path):
     yaml_data:dict
     with open(yaml_file_path, "r") as file:
         yaml_data = yaml.safe_load(file)
-    bot = connection.get_bot()
     
     service_name:str
     containers:list

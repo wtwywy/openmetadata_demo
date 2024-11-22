@@ -8,7 +8,7 @@ from metadata.generated.schema.entity.policies.accessControl.rule import Rule
 from metadata.generated.schema.api.teams.createRole import CreateRoleRequest
 
 def create_policy(name, display_name, description, rules):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     policy = CreatePolicyRequest(
         name=name,
         displayName=display_name,
@@ -42,7 +42,7 @@ def create_policy_from_yaml(yaml_file_path):
         )
 
 def create_role(name:str, display_name:str, description:str, policies:list):
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     role = CreateRoleRequest(
         name=name,
         displayName=display_name,

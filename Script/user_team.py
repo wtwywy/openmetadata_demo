@@ -18,7 +18,7 @@ import connection
 
 from metadata.generated.schema.api.teams.createTeam import CreateTeamRequest
 def create_team(name, display_name, team_type: str, parent_list: list, description: str = ""):
-    ingest_bot = connection.get_bot()
+    ingest_bot = connection.get_connection_obj()
     team = CreateTeamRequest(
         teamType=team_type,
         name=name,
@@ -54,7 +54,7 @@ def create_team_from_yaml(yaml_file_path):
 
 from metadata.generated.schema.api.teams.createUser import CreateUserRequest
 def create_user(name, displayName, email, desc='', team_list=None, role_list=None):
-    ingest_bot = connection.get_bot()
+    ingest_bot = connection.get_connection_obj()
     user = CreateUserRequest(
         name=name,
         displayName=displayName,
@@ -99,7 +99,7 @@ def create_user_from_yaml(yaml_file_path):
     yaml_data:list
     with open(yaml_file_path, "r") as file:
         yaml_data = yaml.safe_load(file)
-    bot = connection.get_bot()
+    bot = connection.get_connection_obj()
     
     user:dict
     for user in yaml_data:
