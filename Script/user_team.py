@@ -77,32 +77,6 @@ def create_user(name, displayName, email, desc='', team_list=None, role_list=Non
     print(f"User '{name}' created successfully!")
     return user
 
-from metadata.generated.schema.auth.basicAuth import BasicAuthMechanism
-from metadata.generated.schema.entity.teams.user import AuthenticationMechanism
-def create_user_with_password(name, displayName, email, password, desc='', team_list=None, role_uuid_list=None):
-    ingest_bot = connection.get_bot()
-    user = CreateUserRequest(
-        name=name,
-        displayName=displayName,
-        description=desc,
-        email=email,
-        authenticationMechanism=AuthenticationMechanism(
-            config=BasicAuthMechanism(
-                password=password
-            ),
-            authType='BASIC',
-        ),
-        createPasswordType='ADMIN_CREATE',
-        password=password,
-        confirmPassword=password,
-        teams=team_list,
-        roles=role_uuid_list,
-    )
-    user = ingest_bot.create_or_update(user)
-    print(f"User '{name}' created successfully!")
-    return user
-
-
 from metadata.generated.schema.entity.teams.team import Team
 from metadata.generated.schema.entity.teams.role import Role
 def create_user_from_yaml(yaml_file_path):
