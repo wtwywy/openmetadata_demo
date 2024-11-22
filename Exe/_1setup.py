@@ -29,7 +29,7 @@ accessControl.create_role_from_yaml('Data/entity/role.yaml')
 # สร้าง team, user
 ## Organization, BusinessUnit, Division, Department 
 from Script import user_team
-user_team.create_team_from_yaml('Data/entity/group.yaml')
+user_team.create_team_from_yaml('Data/entity/team.yaml')
 user_team.create_user_from_yaml('Data/entity/user.yaml')
 #################################
 
