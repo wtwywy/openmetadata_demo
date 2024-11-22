@@ -1,3 +1,6 @@
+"""
+    pipeline service (airflow)
+"""
 from metadata.generated.schema.api.services.createPipelineService import CreatePipelineServiceRequest
 from metadata.generated.schema.entity.services.pipelineService import PipelineConnection
 from metadata.generated.schema.entity.services.connections.pipeline.airflowConnection import AirflowConnection
@@ -8,6 +11,9 @@ from metadata.generated.schema.entity.services.connections.pipeline.backendConne
 import connection
 
 def create_airflow_service(service_name, host_port):
+    """
+        สร้าง service
+    """
     bot = connection.get_connection_obj()
     service = CreatePipelineServiceRequest(
         name=service_name,

@@ -11,6 +11,9 @@ import entity
 
 
 def add_lineage_edge(pipeline_id, source_type, source_fqn, dest_type, dest_fqn, description, col_lineage_list, sqlQuery):
+    """
+        สร้างเส้น lineage
+    """
     bot = connection.get_connection_obj()
     source_id = entity.get_entity_by_name(source_fqn, source_type).id
     dest_id = entity.get_entity_by_name(dest_fqn, dest_type).id
@@ -39,6 +42,9 @@ def add_lineage_edge(pipeline_id, source_type, source_fqn, dest_type, dest_fqn, 
     return lineage
 
 def add_lineage_from_yaml(yaml_file_path):
+    """
+        ใช้ข้อมูลจากไฟล์สร้าง data lineage
+    """
     yaml_data:dict
     with open(yaml_file_path, "r") as file:
         yaml_data = yaml.safe_load(file)

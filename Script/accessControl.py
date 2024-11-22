@@ -1,5 +1,5 @@
 """
-    policy, rule, role
+    เกี่ยวกับ policy, rule, role
 """
 import connection
 import yaml
@@ -8,6 +8,9 @@ from metadata.generated.schema.entity.policies.accessControl.rule import Rule
 from metadata.generated.schema.api.teams.createRole import CreateRoleRequest
 
 def create_policy(name, display_name, description, rules):
+    """
+        สร้าง policy
+    """
     bot = connection.get_connection_obj()
     policy = CreatePolicyRequest(
         name=name,
@@ -19,6 +22,9 @@ def create_policy(name, display_name, description, rules):
     print(f"Policy '{name}' created successfully!")
     return policy
 def create_policy_from_yaml(yaml_file_path):
+    """
+        อ่านไฟล์ และสร้าง rule policy
+    """
     yaml_data:list
     with open(yaml_file_path, "r") as file:
         yaml_data = yaml.safe_load(file)
@@ -42,6 +48,9 @@ def create_policy_from_yaml(yaml_file_path):
         )
 
 def create_role(name:str, display_name:str, description:str, policies:list):
+    """
+        สร้าง role 
+    """
     bot = connection.get_connection_obj()
     role = CreateRoleRequest(
         name=name,
@@ -54,6 +63,9 @@ def create_role(name:str, display_name:str, description:str, policies:list):
     return role
 
 def create_role_from_yaml(yaml_file_path):
+    """
+        อ่านไฟล์ และสร้าง role
+    """
     yaml_data:list
     with open(yaml_file_path, "r") as file:
         yaml_data = yaml.safe_load(file)

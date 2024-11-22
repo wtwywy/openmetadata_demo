@@ -1,4 +1,6 @@
-
+"""
+    ข้อมูลอื่น ๆ ที่ต้องมีข้อมูลจาก step _1 ก่อน
+"""
 # data lineage
 from Script import lineage
 lineage.add_lineage_from_yaml("Data/lineage.yaml")

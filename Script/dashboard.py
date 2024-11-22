@@ -1,5 +1,5 @@
 """
-    dashboard
+    เกี่ยวกับ dashboard
 """
 import connection
 import yaml
@@ -8,6 +8,9 @@ from metadata.generated.schema.api.data.createDashboard import CreateDashboardRe
 from metadata.generated.schema.api.data.createChart import CreateChartRequest 
 
 def create_dashboard_service(name, displayName, desc, service_type):
+    """
+        สร้าง dashboard service 
+    """
     bot = connection.get_connection_obj()
     service = CreateDashboardServiceRequest(
         name = name,
@@ -20,6 +23,9 @@ def create_dashboard_service(name, displayName, desc, service_type):
     return service
 
 def create_dashboard(name, displayName, desc, service_fqn):
+    """
+        สร้าง dashboard
+    """
     bot = connection.get_connection_obj()
     dashboard = CreateDashboardRequest(
         name = name,
@@ -32,6 +38,9 @@ def create_dashboard(name, displayName, desc, service_fqn):
     return dashboard
 
 def create_chart(name, displayName, desc, chartType, service_fqn, dashboard_fqns=None):
+    """
+        สร้าง chart
+    """
     bot = connection.get_connection_obj()
     chart = CreateChartRequest(
         name = name,
@@ -46,6 +55,9 @@ def create_chart(name, displayName, desc, chartType, service_fqn, dashboard_fqns
     return chart
 
 def create_dashboard_from_yaml(yaml_file_path):
+    """
+        สร้าง dashboard และ chart จากไฟล์
+    """
     yaml_data:dict
     with open(yaml_file_path, "r") as file:
         yaml_data = yaml.safe_load(file)

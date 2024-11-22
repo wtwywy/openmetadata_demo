@@ -1,3 +1,8 @@
+"""
+    รวม ฟังก์ชันสำหรับสร้าง metadata จากไฟล์ yaml
+    สำหรับสร้าง demo
+"""
+
 from Script import (
     connection, dashboard
 )

@@ -1,5 +1,5 @@
 """
-    connection obj
+    connection obj (ส่ง request ผ่าน obj นี้)
 """
 from metadata.ingestion.ometa.ometa_api import OpenMetadata
 from metadata.generated.schema.entity.services.connections.metadata.openMetadataConnection import (
@@ -29,6 +29,9 @@ def get_token():
     return config['ingest_bot_token']
 
 def check_health():
+    """ 
+        connection test
+    """
     global metadata
     if metadata.health_check():
         print("connected")

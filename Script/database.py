@@ -1,8 +1,14 @@
+"""
+    database service
+"""
 import connection
 from metadata.generated.schema.entity.services.databaseService import DatabaseServiceType, DatabaseConnection
 from metadata.generated.schema.entity.services.connections.database.mssqlConnection import MssqlConnection
 from metadata.generated.schema.api.services.createDatabaseService import CreateDatabaseServiceRequest
 def create_mssql_service(service_name, connection_details):
+    """
+        สร้าง service
+    """
     bot = connection.get_connection_obj()
     sql_connection = DatabaseConnection(
         config=MssqlConnection(**connection_details)
@@ -19,6 +25,10 @@ def create_mssql_service(service_name, connection_details):
 from metadata.generated.schema.api.data.createStoredProcedure import CreateStoredProcedureRequest
 from metadata.generated.schema.entity.data.storedProcedure import StoredProcedureCode
 def create_stored_procedure(name,desc,lang,code,databaseSchema):
+    """
+        สร้าง stored procedure
+        (เขียนเอาไว้ แต่ไม่ได้ใช้ใน demo)
+    """
     bot = connection.get_connection_obj()
     procedure = CreateStoredProcedureRequest(
         name=name,

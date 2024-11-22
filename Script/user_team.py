@@ -1,5 +1,5 @@
 """
-    uncatagorized code
+    user + team
 """
 import yaml
 
@@ -18,6 +18,10 @@ import connection
 
 from metadata.generated.schema.api.teams.createTeam import CreateTeamRequest
 def create_team(name, display_name, team_type: str, parent_list: list, description: str = ""):
+    """
+        สร้าง team \n
+        team type -> businessUnits division department group
+    """
     ingest_bot = connection.get_connection_obj()
     team = CreateTeamRequest(
         teamType=team_type,
@@ -31,6 +35,9 @@ def create_team(name, display_name, team_type: str, parent_list: list, descripti
     return team
 
 def create_team_from_yaml(yaml_file_path):
+    """
+        สร้าง team จากไฟล์
+    """
     yaml_data:dict
     with open(yaml_file_path, "r") as file:
         yaml_data = yaml.safe_load(file)
@@ -54,6 +61,9 @@ def create_team_from_yaml(yaml_file_path):
 
 from metadata.generated.schema.api.teams.createUser import CreateUserRequest
 def create_user(name, displayName, email, desc='', team_list=None, role_list=None):
+    """
+        สร้าง user
+    """
     ingest_bot = connection.get_connection_obj()
     user = CreateUserRequest(
         name=name,
@@ -96,6 +106,9 @@ def create_user_with_password(name, displayName, email, password, desc='', team_
 from metadata.generated.schema.entity.teams.team import Team
 from metadata.generated.schema.entity.teams.role import Role
 def create_user_from_yaml(yaml_file_path):
+    """
+        ใช้ข้อมูลจากไฟล์สร้าง user 
+    """
     yaml_data:list
     with open(yaml_file_path, "r") as file:
         yaml_data = yaml.safe_load(file)

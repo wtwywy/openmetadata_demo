@@ -1,3 +1,7 @@
+"""
+    storage service
+    ใช้แทน"ไฟล์" ใน demo ที่ทำ 
+"""
 import connection
 import yaml
 from metadata.generated.schema.api.services.createStorageService import CreateStorageServiceRequest
@@ -7,6 +11,9 @@ from metadata.generated.schema.api.data.createContainer import CreateContainerRe
 from metadata.generated.schema.entity.data.table import Column
 
 def create_storage_service(service_name, desc, service_type):
+    """
+        สร้าง service
+    """
     bot = connection.get_connection_obj()
     service = CreateStorageServiceRequest(
         name=service_name,
@@ -25,6 +32,11 @@ def get_storage_service_fqn_by_uuid(uuid):
     return service.fullyQualifiedName
 
 def create_container(name: str,displayName: str, service_fqn: str, column_list:list ,desc: str = ""):
+    """
+        สร้าง container \n
+        คล้ายกับ table \n
+        ใช้แทนไฟล์
+    """
     ingest_bot = connection.get_connection_obj()
     container = CreateContainerRequest(
         name=name,

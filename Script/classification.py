@@ -1,5 +1,5 @@
 """
-    tag, business glossary
+    การสร้าง tag, business glossary และนำไป apply กับ column
 """
 import connection
 import yaml
