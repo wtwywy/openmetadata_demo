@@ -1,3 +1,9 @@
+This project is a demo of openmetadata usage, this project include 
+  - code (use openemtadata library with my additional code) to interact with openmetadata
+  - data file
+  - instruction pdf
+
+
 demo step
   - install python
   - pip install -r requirements.txt
