@@ -7,7 +7,7 @@ from metadata.generated.schema.api.policies.createPolicy import CreatePolicyRequ
 from metadata.generated.schema.entity.policies.accessControl.rule import Rule
 from metadata.generated.schema.api.teams.createRole import CreateRoleRequest
 
-def create_policy(name, display_name, description, rules):
+def create_policy(name:str, display_name:str, description:str, rules:list):
     """
         สร้าง policy
     """
